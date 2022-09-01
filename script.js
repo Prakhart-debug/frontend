@@ -20,6 +20,7 @@ searchInput.addEventListener("input", e => {
 // 
 //function for basic search
     function testing(){
+      method: "GET",
     fetch("https://60d075407de0b20017108b89.mockapi.io/animals").then(res => res.json()).then(data => {
     animalss = data.map(animals => {
       const card = animalsCardTemplate.content.cloneNode(true).children[0];
@@ -35,6 +36,7 @@ searchInput.addEventListener("input", e => {
 
 // function for sorting in acending order
 function accending(){
+    method: "GET",
     fetch("https://60d075407de0b20017108b89.mockapi.io/animals?sortBy=createdAt&order").then(res => res.json()).then(data => {
     animalss = data.map(animals => {
       const card = animalsCardTemplate.content.cloneNode(true).children[0];
@@ -46,4 +48,18 @@ function accending(){
       return { name: animals.name, id: animals.id, element: card };
     })
   })
+}
+function Decending(){
+      method: "GET",
+      fetch("https://60d075407de0b20017108b89.mockapi.io/animals?sortBy=createdAt&order=desc").then(res => res.json()).then(data => {
+      animalss = data.map(animals => {
+        const card = animalsCardTemplate.content.cloneNode(true).children[0];
+        const header = card.querySelector("[data-header]");
+        const body = card.querySelector("[data-body]");
+        header.textContent = animals.name;
+        body.textContent = animals.id;
+        animalsCardContainer.append(card)
+        return { name: animals.name, id: animals.id, element: card };
+      })
+    })
 }

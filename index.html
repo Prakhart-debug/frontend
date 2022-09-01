@@ -10,16 +10,16 @@
 </head>
 <body>
   <div class="search-wrapper">
-    <label for="search">Search animalss</label>
-    <input type="search" id="search" data-search>
+    <label for="search" >Search animalss</label>
+    <input type="search" id="search" data-search placeholder="Enter Pet Name">
   </div>
   <button onclick="testing()">Search</button>
-  <button id="clickTest" onclick = "accending()">Accending Order</button> 
-  <button>Search</button>
-  <button>Search</button>
+  <button id="clickTest" onclick = "accending()">Accending</button> 
+  <button onclick="Decending()">Decending</button>
+  <!-- <button onclick="clear()"></button> -->
   <div class="animals-cards" data-animals-cards-container></div>
   <template data-animals-template>
-    <div class="card">
+    <div class="card" >
       <div class="header" data-header></div>
       <div class="body" data-body></div>
     </div>
