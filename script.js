@@ -20,6 +20,7 @@ searchInput.addEventListener("input", e => {
 // 
 //function for basic search
     function testing(){
+      location.reload();
       method: "GET",
     fetch("https://60d075407de0b20017108b89.mockapi.io/animals").then(res => res.json()).then(data => {
     animalss = data.map(animals => {
@@ -36,6 +37,7 @@ searchInput.addEventListener("input", e => {
 
 // function for sorting in acending order
 function accending(){
+  location.reload();
     method: "GET",
     fetch("https://60d075407de0b20017108b89.mockapi.io/animals?sortBy=createdAt&order").then(res => res.json()).then(data => {
     animalss = data.map(animals => {
@@ -50,6 +52,7 @@ function accending(){
   })
 }
 function Decending(){
+  location.reload();
       method: "GET",
       fetch("https://60d075407de0b20017108b89.mockapi.io/animals?sortBy=createdAt&order=desc").then(res => res.json()).then(data => {
       animalss = data.map(animals => {
